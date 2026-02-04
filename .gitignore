@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+build/
+dist/
+.next/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Summary files (don't push to GitHub)
+BACKEND_TEST_SUMMARY.md
+BACKEND_TESTS_EXECUTION_GUIDE.md
+TEST_COMPLETION_SUMMARY.md
+TEST_SUMMARY.md
+INTEGRATION_TESTING_GUIDE.md
+REGISTRATION_FIXED.md
+BOOKS_COMPLETE.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Database
+database/bookstore.db

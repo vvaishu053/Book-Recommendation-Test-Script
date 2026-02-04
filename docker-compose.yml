@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: book-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - NODE_ENV=production
+      - DB_PATH=/app/data/bookstore.db
+    volumes:
+      - sqlite_data:/app/data
+      - ./database:/database:ro
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: book-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  sqlite_data:

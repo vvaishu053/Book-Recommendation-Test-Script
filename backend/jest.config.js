@@ -1,0 +1,20 @@
+module.exports = {
+  testEnvironment: 'node',
+  testMatch: ['**/__tests__/**/*.test.js', '**/integration/**/*.test.js'],
+  setupFilesAfterEnv: ['<rootDir>/__tests__/setupTests.js'],
+  testPathIgnorePatterns: ['<rootDir>/__tests__/integration.test.js'],
+  collectCoverageFrom: [
+    'controllers/**/*.js',
+    'middleware/**/*.js',
+    'routes/**/*.js',
+    'config/**/*.js',
+    '!**/*.test.js',
+  ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
+  testTimeout: 10000,
+  clearMocks: true,
+  resetMocks: true,
+  restoreMocks: true,
+  silent: true,
+  logHeapUsage: false,
+};
