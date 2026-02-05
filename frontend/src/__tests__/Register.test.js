@@ -49,7 +49,7 @@ describe("Register Component", () => {
   test("renders register page correctly", () => {
     renderRegister();
 
-    expect(screen.getByText(/📚 register/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /register/i })).toBeInTheDocument();
     expect(screen.getByText(/join our book community/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/full name/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
