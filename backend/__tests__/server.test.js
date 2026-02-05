@@ -1,17 +1,17 @@
 const request = require("supertest");
 
-// ✅ Mock DB so SQLite doesn't connect during this test
+
 jest.mock("../config/db", () => ({
   db: {},
   dbRun: jest.fn().mockResolvedValue(true),
 }));
 
-// ✅ Mock fs so SQL file isn't read
+
 jest.mock("fs", () => ({
   readFileSync: jest.fn(() => "CREATE TABLE test(id int);"),
 }));
 
-// ✅ Mock routes using REAL express (important)
+
 jest.mock("../routes/authRoutes", () => {
   const express = jest.requireActual("express");
   return express.Router();

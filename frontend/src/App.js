@@ -51,7 +51,7 @@ function App() {
       {user && <Navbar user={user} setUser={setUser} />}
 
       <Routes>
-        {/* ✅ FIX IS HERE */}
+       
         <Route path="/" element={<Home user={user} />} />
 
         <Route path="/login" element={<Login user={user} setUser={setUser} />} />

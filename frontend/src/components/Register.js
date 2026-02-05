@@ -59,7 +59,7 @@ function Register({ user }) {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h1>📚 Register</h1>
+        <h1> Register</h1>
         <p className="auth-subtitle">Join our book community</p>
 
         {error && <div className="error-message">{error}</div>}

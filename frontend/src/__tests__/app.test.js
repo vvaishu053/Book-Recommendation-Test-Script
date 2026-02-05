@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import App from "../App";
 
-// ✅ Mock all pages/components so App routing is easy to test
+//  Mock all pages/components so App routing is easy to test
 jest.mock("../components/Home", () => () => <div>HOME_PAGE</div>);
 jest.mock("../components/Login", () => () => <div>LOGIN_PAGE</div>);
 jest.mock("../components/Register", () => () => <div>REGISTER_PAGE</div>);
@@ -87,7 +87,7 @@ describe("App Routing", () => {
     localStorage.setItem("token", "test-token");
     window.history.pushState({}, "", "/");
 
-    // ✅ mock fetch success
+    //  mock fetch success
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       json: async () => ({ user: { id: 1, name: "Vaish" } }),
@@ -119,7 +119,7 @@ describe("App Routing", () => {
     localStorage.setItem("token", "bad-token");
     window.history.pushState({}, "", "/");
 
-    // ✅ mock fetch fail
+    //  mock fetch fail
     global.fetch = jest.fn().mockResolvedValue({ ok: false });
 
     render(<App />);
